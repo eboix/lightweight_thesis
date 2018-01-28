@@ -40,55 +40,6 @@ details about specifying time zones.]
   In parallel.Pool.hBuildPool (line 446)
   In parallel.internal.pool.doParpool (line 15)
   In parpool (line 89)
-  In conn_stats (line 21)] 
+  In conn_stats (line 26)] 
 connected to 12 workers.
-
-ans =
-
-   600
-
-
-ans =
-
-   100
-
-
-ans =
-
-   200
-
-
-ans =
-
-   500
-
-
-ans =
-
-   300
-
-
-ans =
-
-   400
-
-
-ans =
-
-   800
-
-
-ans =
-
-   700
-
-
-ans =
-
-   900
-
-
-ans =
-
-        1000
-
+>> 
