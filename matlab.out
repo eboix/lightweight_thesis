@@ -1,0 +1,94 @@
+
+The default version of matlab in /usr/licensed/bin is matlab-R2016b 
+
+The following versions are available in /usr/licensed/bin:
+	matlab-R2017b
+	matlab-R2017a
+	matlab-R2016b
+	matlab-R2016a
+	matlab-R2015b
+	matlab-R2015a
+	matlab-R2014b
+	matlab-R2014a
+	matlab-R2013b
+	matlab-R2013a
+	matlab-R2012a
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016b (9.1.0.441655) 64-bit (glnxa64)
+                             September 7, 2016
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ... [Warning: The system time zone setting, 'US/Eastern', does not specify a single
+time zone unambiguously. It will be treated as 'America/New_York'. See the <a
+href="matlab:doc('datetime.TimeZone')">datetime.TimeZone property</a> for
+details about specifying time zones.] 
+[> In verifyTimeZone (line 23)
+  In datetime (line 503)
+  In parallel.internal.cluster.DefaultProperties.getNewJobPropStruct (line 16)
+  In parallel.internal.cluster.CJSSupport/buildJob (line 151)
+  In parallel.cluster.CJSCluster/buildCommunicatingJob (line 452)
+  In parallel.Cluster/createCommunicatingJob (line 89)
+  In parallel.internal.pool.InteractiveClient>iCreateCommunicatingJob (line 714)
+  In parallel.internal.pool.InteractiveClient/start (line 325)
+  In parallel.Pool>iStartClient (line 567)
+  In parallel.Pool.hBuildPool (line 446)
+  In parallel.internal.pool.doParpool (line 15)
+  In parpool (line 89)
+  In conn_stats (line 21)] 
+connected to 12 workers.
+
+ans =
+
+   600
+
+
+ans =
+
+   100
+
+
+ans =
+
+   200
+
+
+ans =
+
+   500
+
+
+ans =
+
+   300
+
+
+ans =
+
+   400
+
+
+ans =
+
+   800
+
+
+ans =
+
+   700
+
+
+ans =
+
+   900
+
+
+ans =
+
+        1000
+
