@@ -1,8 +1,13 @@
 
-% K6.
-e = [[1 2]; [1 3]; [1 4]; [1 5]; [1 6]; [2 3]; [2 4]; [2 5]; [2 6]; [3 4]; [3 5]; [3 6]; [4 5]; [4 6]; [5 6]];
+% K7.
+e = [[1 2]; [1 3]; [1 4]; [1 5]; [1 6]; [2 3]; [2 4]; [2 5]; [2 6]; [3 4]; [3 5]; [3 6]; [4 5]; [4 6]; [5 6]; [1 7]; [2 7]; [3 7]; [4 7]; [5 7]; [6 7]];
 u = 1;
-v = 6;
+v = 7;
+
+% % K6.
+% e = [[1 2]; [1 3]; [1 4]; [1 5]; [1 6]; [2 3]; [2 4]; [2 5]; [2 6]; [3 4]; [3 5]; [3 6]; [4 5]; [4 6]; [5 6]];
+% u = 1;
+% v = 6;
 
 % e = [[1 2]; [1 3]; [2 5]; [3 4]; [2 4]; [3 5]; [4 6]; [5 6]; [2 3]; [1 6]];
 % u = 1;
@@ -16,11 +21,13 @@ v = 6;
 n = max(max(e));
 m = size(e,1);
 
-num_trials = 1000;
+num_trials = 100;
 
 poolobj = parpool;
 conn_probs = zeros(1,num_trials);
 exp_corr2s = zeros(1,num_trials);
+as = zeros(num_trials,m);
+bs = zeros(num_trials,m);
 parfor trialnum = 1:num_trials
   %  trialnum
   if mod(trialnum,100) == 0
@@ -31,6 +38,8 @@ parfor trialnum = 1:num_trials
     a = rand(1,m);
     b = rand(1,m); % Asymmetric case.
    %  b = 1-a; % Symmetric case. 
+   as(trialnum,:) = a;
+   bs(trialnum,:) = b;
    
     % Calculate probability $u$ and $v$ are connected.
     % Each of the edges is on with probability equal to its SNR.
@@ -113,11 +122,11 @@ parfor trialnum = 1:num_trials
     run_vals = [conn_prob exp_corr2]
 end
 
-save('collected_data.mat','exp_corr2s','conn_probs');
+save('collected_data.mat','exp_corr2s','conn_probs', 'as', 'bs');
 assert(all(exp_corr2s <= conn_probs));
 
-% hold off
-% scatter(exp_corr2s,conn_probs,'.')
-% hold on
-% ezplot(@(x) x, [0 1])
-% disp('Expected correlation seems <= conn_prob.')
+hold off
+scatter(exp_corr2s,conn_probs,'.')
+hold on
+ezplot(@(x) x, [0 1])
+disp('Expected correlation seems <= conn_prob.')
